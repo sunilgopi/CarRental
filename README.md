@@ -98,7 +98,7 @@ CarRentalSystem/
 ### Open the Application
 Navigate to the following URL in your browser:
 ```bash
- https://sunilgopi.github.io/JAVASCRIPTPROJECT/JavaScriptProject/indexFiles/index.html
+ https://sunilgopi.github.io/CarRental/JavaScriptProject/indexFiles/index.html
 ```
 
 ---
