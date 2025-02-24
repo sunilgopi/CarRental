@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental</title>
+  <style>
+    /* Reset basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+
+    /* Container for cards */
+    .CardDisplay {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Individual Card Styling */
+    .card {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+
+    .prices {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    /* Styling for Booked Cars */
+    .booked-car {
+      color: red;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; margin: 20px 0;">Booked Cars for Rent</h1>
+  <div class="CardDisplay"></div>
+
+  <script>
+    // Get the container to display cards
+    const displayCards = document.querySelector(".CardDisplay");
+
+    // Retrieve car data from localStorage (or use sample data for testing)
+    let carsData = JSON.parse(localStorage.getItem("AdminCardData")) || [];
+
+    // Function to render car cards
+    function renderCarCards() {
+      // Clear the display area
+      displayCards.innerHTML = "";
+
+      carsData.forEach((car) => {
+        // Create a new card element
+        let newCard = document.createElement("div");
+        newCard.className = "card";
+
+        // Card HTML structure
+        newCard.innerHTML = `
+          <img src="${car.image}" alt="${car.name}">
+          <div class="card-body">
+            <h5 class="card-title">${car.name}</h5>
+            <ul>
+              <li><strong>Seats:</strong> ${car.seats}</li>
+              <li><strong>Category:</strong> ${car.category}</li>
+              <li><strong>Age:</strong> ${car.age}</li>
+              <li><strong>Transmission:</strong> ${car.transmission}</li>
+              <li><strong>Fuel:</strong> ${car.fuel}</li>
+            </ul>
+            <div class="prices">
+              Price: $${car.price}
+            </div>
+            <div class="booked-car">Booked Car</div>
+          </div>
+        `;
+
+        // Append the card to the container
+        displayCards.appendChild(newCard);
+      });
+    }
+
+    // Initial Render
+    renderCarCards();
+  </script>
+</body>
+</html>

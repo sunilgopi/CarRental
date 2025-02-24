@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Navbar</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4 position-fixed ">
+      <div class="container p-3 ">
+        <a class="navbar-brand logo fs-4 " href="#">
+          <span class="logo-green ">car </span> rental
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Customers.html">CheckCustomers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#categerios">CarsAvailable</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../AdminManageBookingFiles/AdminManageBooking.html">ManageBookings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Help Center</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center ms-3">
+            <span class="me-3">+91 8555995671</span>
+            <button class="btn btn-outline-secondary me-3">
+              <i class="fas fa-moon"></i>
+            </button>
+            <!-- <a href="login.html" class="btn btn-success">LOGIN <i class="fas fa-sign-in-alt ms-1"></i></a> -->
+            
+            <div class="user-container" id="userContainer">
+              <!-- User Icon -->
+              <div class="user-icon" id="userIcon">
+                <i class="fas fa-user fa-3x"></i>
+              </div>
+          
+              <!-- Popover Content -->
+              <div id="popover" class="popover-content">
+                <label for="imageUpload" class="upload-btn">
+                  <input type="file" id="imageUpload" style="display: none" />
+                  <button class="uploadimage">Admin</button>
+                </label>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+              </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+ 
+
+  <!-- Banner -->
+  <div id="bannerCarousel" class="carousel slide container" data-bs-ride="carousel">
+    <div class="carousel-inner banner-img ">
+      <div class="carousel-item active round-2 move mrg">
+        <img src="../assets/images/Group-1.jpg" class="d-block w-100 round-2" alt="Car 1">
+        <div class="carousel-caption d-none d-md-block">
+         
+        </div>
+      </div>
+      <div class="carousel-item round-2 move">
+        <img src="../assets/images/Group-2.jpg" class="d-block w-100 round-2" alt="Car 2">
+        <div class="carousel-caption d-none d-md-block">
+          
+        </div>
+      </div>
+      <div class="carousel-item round-2">
+        <img src="../assets/images/Group-3.jpg" class="d-block w-100 " alt="Car 3">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev btn" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <!-- <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span> -->
+    </button>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <form class="d-flex">
+        <input id="searchCar"type="text" class="form-control me-2" placeholder="Find the car of your dreams ">
+        <button type="" id="searchButton"><i id="#cards" class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container my-5 cars "id="categerios">
+    <h2 class="text-center mb-4 section-3heading">Choose the car of your dreams</h2>
+    <p class="text-center mb-4 font">We provide our customers with the most incredible driving emotions. That is why there are only world-class cars in our fleet.</p>
+    
+    
+    <!-- Car Categories -->
+    <div class="text-center mb-4 ">
+      <button class="btn  mx-2" id="compact">Compact</button>
+      <button class="btn  mx-2" id="Economy">Economy</button>
+      <button class="btn  mx-2" id="Luxzary">Luxzary</button>
+    </div>
+     <div class="div" id="cards"></div>
+
+
+
+     
+     <section id="section3">
+      <div class="container">
+          <div class="section3__wrapper" data-aos="flip-left" data-aos-duration="3000" >
+              <div class="section3__wrapper--left">
+                  <p>
+                      <img src="../../assets/images/Google.svg" alt="Google">
+                      <span>From Google</span>
+                  </p>
+
+                  <h1>Hear what the community is saying</h1>
+                  <h2></h2>
+                  <p>More interesting reviews on Instagram</p>
+                  <button>Instagram</button>
+              </div>
+              <div class="section3__wrapper--right">
+                  <div class="section3__wrapper--right--card">
+                      <div class="section3__wrapper--right--card--wrapper">
+                          <img src="../../assets/images/section3_i1.svg" alt="icon">
+                          <h3>Savannah Nguyen <br> <a href="#">savannahnguyen@gmail.com</a></h3>
+                          <img src="../../assets/images/Google.svg" alt="Google"
+                              class="section3__wrapper--right--card--wrapper-img2">
+                      </div>
+                      <article>
+                          Sagittis sed tortor, elementum vitae varius sodales consectetur. Vitae arcu ut
+                          morbi bibendum ullamcorper feugiat. Venenatis hendrerit cursus egestas sit ornare nunc
+                          vulputate aliquam sapien. Pulvinar nunc consectetur nibh consectetur mollis mauris est
+                          mauris amet. Sed hac vehicula id et dui morbi quam pulvinar condimentum. Senectus sed
+                          varius interdum nunc, arcu vulputate massa.
+                      </article>
+                      <p>
+                          <span>Star rating:</span>
+                          <img src="../../assets/images/section3_i4.svg" alt="icon">
+                      </p>
+                  </div>
+                  <div class="section3__wrapper--right--card">
+                      <div class="section3__wrapper--right--card--wrapper">
+                          <img src="../../assets/images/section3_i2.svg" alt="icon">
+                          <h3>Ronald Richards <br> <a href="#">ronaldrichards@gmail.com</a></h3>
+                          <img src="../../assets/images/Google.svg" alt="Google"
+                              class="section3__wrapper--right--card--wrapper-img2">
+                      </div>
+                      <article>
+                          Placerat pulvinar in amet sem id gravida nisi leo. A dignissim est pellentesque mi
+                          quisque vel mi ut. Porttitor blandit auctor odio a ornare felis tortor bibendum
+                          molestie.
+                      </article>
+                      <p>
+                          <span>Star rating:</span>
+                          <img src="../../assets/images/section3_i5.svg" alt="icon">
+                      </p>
+                  </div>
+                  <div class="section3__wrapper--right--card">
+                      <div class="section3__wrapper--right--card--wrapper">
+                          <img src="../../assets/images/section3_i3.svg" alt="icon">
+                          <h3>Kristin Watson <br> <a href="#">kristinwatson@gmail.com</a></h3>
+                          <img src="../../assets/images/Google.svg" alt="Google"
+                              class="section3__wrapper--right--card--wrapper-img2">
+                      </div>
+                      <article>
+                          Id adipiscing vulputate arcu pretium dignissim. Felis vulputate tellus velit
+                          consectetur. Congue convallis aliquam eget ullamcorper quam pellentesque cursus.
+                          Dictumst mauris ac, quis orci morbi ultrices faucibus volutpat mauris. Bibendum sed ut
+                          lectus facilisi amet orci. Interdum massa orci urna id ac cras arcu.
+                      </article>
+                      <p>
+                          <span>Star rating:</span>
+                          <img src="../assets/images/section3_i4.svg" alt="icon">
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <div class="container brand">
+    <p class="sec-4text">More than 50 brands of cars</p>
+    <div class="brands">
+      <marquee behavior="scroll" direction="left" scrollamount="8" loop="infinite">
+        <img src="../assets/images/section4_img1.png" alt="Ford" width="100">
+        <img src="../assets/images/section4_img2.png" alt="Nissan" width="100">
+        <img src="../assets/images/section4_img3.png" alt="Toyota" width="100">
+        <img src="../assets/images/section4_img4.png" alt="Dodge" width="100">
+        <img src="../assets/images/section4_img5.png" alt="Hyundai" width="100">
+        <img src="../assets/images/section4_img6.png" alt="Jeep" width="100">
+        <img src="../assets/images/section4_img1.png" alt="Ford" width="100">
+        <img src="../assets/images/section4_img2.png" alt="Nissan" width="100">
+        <img src="../assets/images/section4_img3.png" alt="Toyota" width="100">
+        <img src="../assets/images/section4_img4.png" alt="Dodge" width="100">
+        <img src="../assets/images/section4_img5.png" alt="Hyundai" width="100">
+        <img src="../assets/images/section4_img6.png" alt="Jeep" width="100">
+    </marquee>
+    
+    </div>
+</div>
+  
+
+<section id="section5">
+  <div class="container">
+      <h1 data-aos="fade-up" data-aos-duration="2000">Unparalleled service</h1>
+      <p data-aos="fade-down" data-aos-duration="2000">
+          Whether you are looking for Newark Airport car rental, an insurance replacement vehicle or minivan
+          to
+          take on vacation Car rental has it all.
+      </p>
+      <div class="section5__wrapper">
+          <div class="section5__wrapper--card" data-aos="zoom-in-right" data-aos-duration="2000">
+              <h2>Book online,<br> pay online</h2>
+              <h3>
+                  Complete the booking process A-Z, with our easy online system
+              </h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M30 9.37427L48.184 9.8884C51.3971 9.97925 54.0546 12.4184 54.42 15.6119C55.2288 22.6809 55.2288 29.8191 54.42 36.8882C54.0546 40.0817 51.3971 42.5208 48.184 42.6116L33.125 43.0374V48.125H42.5C43.5355 48.125 44.375 48.9645 44.375 50C44.375 51.0356 43.5355 51.875 42.5 51.875H17.5C16.4645 51.875 15.625 51.0356 15.625 50C15.625 48.9645 16.4645 48.125 17.5 48.125H26.875V43.0374L11.8159 42.6116C8.60284 42.5208 5.9453 40.0817 5.57991 36.8882C4.77109 29.8191 4.77109 22.6809 5.57991 15.6119C5.9453 12.4184 8.60284 9.97925 11.8159 9.8884L30 9.37427ZM12.5 34.375C11.4645 34.375 10.625 35.2145 10.625 36.25C10.625 37.2856 11.4645 38.125 12.5 38.125H47.5C48.5355 38.125 49.375 37.2856 49.375 36.25C49.375 35.2145 48.5355 34.375 47.5 34.375H12.5Z"
+                      fill="#299764" />
+              </svg>
+          </div>
+          <div class="section5__wrapper--card" data-aos="zoom-in-left" data-aos-duration="2000">
+              <h2>Guaranteed car <br>reservation</h2>
+              <h3>
+                  When you book with Car rental, you can be confident your car will be waiting for you
+              </h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                  <path
+                      d="M32.9017 11.0177C31.1165 9.94276 28.8835 9.94276 27.0983 11.0177L25.8076 11.7949C22.6757 13.6807 19.1598 14.838 15.5201 15.1809L14.7069 15.2575C13.1017 15.4087 11.875 16.7564 11.875 18.3687V22.4784C11.875 29.425 14.6952 36.0739 19.6896 40.9021L27.828 48.7696C29.0393 49.9405 30.9607 49.9405 32.172 48.7696L40.3104 40.9021C45.3048 36.0739 48.125 29.425 48.125 22.4784V18.3687C48.125 16.7564 46.8983 15.4087 45.2931 15.2575L44.4799 15.1809C40.8402 14.838 37.3243 13.6807 34.1924 11.7949L32.9017 11.0177Z"
+                      fill="#299764" />
+              </svg>
+          </div>
+          <div class="section5__wrapper--card" data-aos="zoom-in-right" data-aos-duration="2000">
+              <h2>Unparalleled <br>customer service</h2>
+              <h3>
+                  We're here to help. We pride ourselves in our customer service
+              </h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                  <path
+                      d="M25 9.375C19.8223 9.375 15.625 13.5723 15.625 18.75C15.625 23.9277 19.8223 28.125 25 28.125C30.1777 28.125 34.375 23.9277 34.375 18.75C34.375 13.5723 30.1777 9.375 25 9.375Z"
+                      fill="#299764" />
+                  <path
+                      d="M15 33.125C9.82233 33.125 5.625 37.3223 5.625 42.5V45.4707C5.625 47.3538 6.98971 48.9594 8.84818 49.2628C14.375 50.1651 19.9585 50.6013 25.5402 50.5712C25.9305 50.5691 26.1665 50.1374 25.9756 49.797C24.5582 47.2694 23.75 44.3541 23.75 41.25C23.75 39.2823 24.0748 37.3904 24.6736 35.6251C24.7861 35.2933 24.5454 34.9406 24.1954 34.9251C22.5658 34.8527 20.9436 34.5602 19.374 34.0476L17.2102 33.3411C16.7717 33.1979 16.3134 33.125 15.8522 33.125H15Z"
+                      fill="#299764" />
+                  <path
+                      d="M43.125 37.5C43.125 36.4645 42.2855 35.625 41.25 35.625C40.2145 35.625 39.375 36.4645 39.375 37.5V41.9318C39.375 42.5317 39.662 43.0954 40.1472 43.4482L42.6472 45.2664C43.4847 45.8755 44.6573 45.6903 45.2664 44.8528C45.8755 44.0153 45.6903 42.8427 44.8528 42.2336L43.125 40.977V37.5Z"
+                      fill="#299764" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M41.25 55C48.8439 55 55 48.8439 55 41.25C55 33.6561 48.8439 27.5 41.25 27.5C33.6561 27.5 27.5 33.6561 27.5 41.25C27.5 48.8439 33.6561 55 41.25 55ZM41.25 51.25C46.7728 51.25 51.25 46.7728 51.25 41.25C51.25 35.7272 46.7728 31.25 41.25 31.25C35.7272 31.25 31.25 35.7272 31.25 41.25C31.25 46.7728 35.7272 51.25 41.25 51.25Z"
+                      fill="#299764" />
+              </svg>
+          </div>
+          <div class="section5__wrapper--card" data-aos="zoom-in-left" data-aos-duration="2000">
+              <h2>No reservation or <br>booking fees</h2>
+              <h3>
+                  No cancellation fees if cancelled 24 hours prior to booking time
+              </h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M52.5254 25.4283L52.5319 34.4855C52.4681 35.3483 52.3859 36.2102 52.2853 37.0704C52.1171 38.5089 50.9477 39.6693 49.4792 39.8334C44.8798 40.3474 40.1203 40.3474 35.5209 39.8334C34.0524 39.6693 32.883 38.5089 32.7147 37.0704C32.1653 32.3729 32.1653 27.6273 32.7147 22.9298C32.883 21.4913 34.0524 20.3309 35.5209 20.1668C40.1203 19.6527 44.8798 19.6527 49.4792 20.1668C50.9477 20.3309 52.1171 21.4913 52.2853 22.9298C52.3826 23.7613 52.4626 24.5943 52.5254 25.4283ZM42.5 26.2501C40.429 26.2501 38.75 27.929 38.75 30.0001C38.75 32.0712 40.429 33.7501 42.5 33.7501C44.5711 33.7501 46.25 32.0712 46.25 30.0001C46.25 27.929 44.5711 26.2501 42.5 26.2501Z"
+                      fill="#299764" />
+                  <path
+                      d="M51.009 15.0994C51.3977 15.7725 50.6682 16.5263 49.8957 16.44C45.0195 15.895 39.9805 15.895 35.1043 16.44C31.931 16.7947 29.3645 19.2935 28.9901 22.4942C28.4069 27.4811 28.4069 32.5191 28.9901 37.506C29.3645 40.7067 31.931 43.2055 35.1043 43.5602C39.9805 44.1052 45.0195 44.1052 49.8957 43.5602C50.6733 43.4733 51.4088 44.2323 51.0164 44.9092C49.0699 48.2663 45.5996 50.6093 41.5671 51.0336L39.9374 51.2051C31.6603 52.0761 23.3117 52.0187 15.0473 51.0339L13.9674 50.9052C9.51212 50.3743 5.982 46.8934 5.38857 42.446C4.28633 34.1853 4.28633 25.8149 5.38857 17.5542C5.982 13.1068 9.51212 9.62592 13.9674 9.095L15.0473 8.96633C23.3117 7.98151 31.6603 7.92407 39.9374 8.79508L41.5671 8.96657C45.603 9.39128 49.0678 11.7378 51.009 15.0994Z"
+                      fill="#299764" />
+              </svg>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="section6">
+  <div class="container">
+      <div class="section6__wrapper" data-aos="fade-up" data-aos-anchor-placement="top-center">
+          <div class="section6__wrapper--div"></div>
+          <div class="section6__wrapper--left">
+              <h1>Car rental keeps you safe</h1>
+              <article>
+                  The safety of our employees and renters is our number one priority. In addition to
+                  being confident your vehicle is cleaned and sanitized every time you rent, you can also feel
+                  confident that we will take every opportunity to enhance the health and safety measures
+                  currently practiced in our operations.
+              </article>
+              <div class="section6__wrapper--left--wrappercard">
+                  <div class="section6__wrapper--left--wrappercard-card" data-aos="flip-left"
+                      data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                      <p>Every car is thoroughly sanitized and cleaned</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                          fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M18.1184 4.06252L18.1127 4.0625H11.8872L11.8816 4.06252H10.625C10.1072 4.06252 9.6875 4.48225 9.6875 5.00002C9.6875 5.51778 10.1072 5.93752 10.625 5.93752H10.9497V12.2639C5.38509 14.8944 4.5812 22.5649 9.58274 26.2744L9.95149 26.5479C12.9498 28.7717 17.0501 28.7717 20.0485 26.5479L20.4172 26.2744C25.4188 22.5649 24.6149 14.8944 19.0502 12.2639V5.93752H19.375C19.8928 5.93752 20.3125 5.51778 20.3125 5.00002C20.3125 4.48225 19.8928 4.06252 19.375 4.06252H18.1184ZM9.87107 15.3125H20.1289C19.5636 14.7185 18.8637 14.2197 18.0345 13.8622C17.513 13.6374 17.1752 13.1239 17.1752 12.556V5.93752H12.8247V12.556C12.8247 13.1239 12.487 13.6374 11.9655 13.8622C11.1363 14.2197 10.4364 14.7185 9.87107 15.3125ZM12.5 21.25C11.8096 21.25 11.25 21.8097 11.25 22.5C11.25 23.1904 11.8096 23.75 12.5 23.75C13.1904 23.75 13.75 23.1904 13.75 22.5C13.75 21.8097 13.1904 21.25 12.5 21.25ZM15 20C15 19.3097 15.5596 18.75 16.25 18.75C16.9404 18.75 17.5 19.3097 17.5 20C17.5 20.6904 16.9404 21.25 16.25 21.25C15.5596 21.25 15 20.6904 15 20Z"
+                              fill="black" />
+                      </svg>
+                  </div>
+                  <div class="section6__wrapper--left--wrappercard-card" data-aos="flip-left"
+                      data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                      <p>All of our employees wear masks</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                          fill="none">
+                          <path
+                              d="M9.25 6.5625C5.77393 6.5625 2.8125 9.16163 2.8125 12.5372C2.8125 14.8659 3.90293 16.8265 5.34811 18.4505C6.78833 20.069 8.64643 21.4275 10.3262 22.5645L13.2245 24.5264C13.5419 24.7412 13.9581 24.7412 14.2755 24.5264L17.1738 22.5646C17.7109 22.201 18.2663 21.8147 18.8204 21.4046C18.9653 21.2973 19.0115 21.1015 18.9315 20.9399L17.2279 17.501C17.1475 17.3386 16.9264 17.3131 16.8111 17.4529L16.7201 17.5632C16.2452 18.1388 15.5379 18.4722 14.7917 18.4722H12.5C11.1193 18.4722 10 17.3529 10 15.9722C10 14.5915 11.1193 13.4722 12.5 13.4722H13.3775C13.5268 13.4722 13.6682 13.4055 13.7632 13.2904L15.7278 10.909C16.2757 10.2449 17.1267 9.90948 17.9804 10.0211C18.834 10.1327 19.5702 10.6757 19.9289 11.4584L20.9323 13.6476C21.0376 13.8772 21.3368 13.9385 21.5551 13.8113C21.9266 13.5949 22.3572 13.4722 22.8125 13.4722H24.298C24.4868 13.4722 24.6472 13.332 24.6626 13.1439C24.679 12.9445 24.6875 12.7423 24.6875 12.5372C24.6875 9.16163 21.7261 6.5625 18.25 6.5625C16.4582 6.5625 14.8814 7.40267 13.75 8.48979C12.6186 7.40267 11.0418 6.5625 9.25 6.5625Z"
+                              fill="black" />
+                          <path
+                              d="M18.5085 12.1094C18.374 11.8159 18.0979 11.6123 17.7778 11.5704C17.4577 11.5286 17.1385 11.6544 16.9331 11.9034L14.3497 15.0347H12.5C11.9822 15.0347 11.5625 15.4545 11.5625 15.9722C11.5625 16.49 11.9822 16.9097 12.5 16.9097H14.7917C15.0715 16.9097 15.3367 16.7847 15.5148 16.5688L17.4273 14.2506L19.6686 19.1406C19.8031 19.4341 20.0792 19.6377 20.3993 19.6796C20.7194 19.7214 21.0385 19.5956 21.244 19.3466L23.2544 16.9097H26.25C26.7678 16.9097 27.1875 16.49 27.1875 15.9722C27.1875 15.4545 26.7678 15.0347 26.25 15.0347H22.8125C22.5326 15.0347 22.2674 15.1597 22.0893 15.3756L20.7497 16.9994L18.5085 12.1094Z"
+                              fill="black" />
+                      </svg>
+                  </div>
+                  <div class="section6__wrapper--left--wrappercard-card" data-aos="flip-left"
+                      data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                      <p>We stay up to date with all protocol from the CDC</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                          fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M23.125 14.0625C21.5344 14.0625 20.1606 15.1751 19.83 16.7309L19.8022 16.8614C19.7173 17.261 19.7024 17.6724 19.758 18.0771L19.9493 19.468C19.8778 19.4766 19.8064 19.4856 19.735 19.4949C18.6354 19.6377 17.8125 20.5744 17.8125 21.6832V24.5668C17.8125 25.6757 18.6354 26.6123 19.735 26.7551C21.9855 27.0474 24.2644 27.0474 26.515 26.7551C27.6146 26.6123 28.4375 25.6757 28.4375 24.5668V21.6832C28.4375 20.5744 27.6146 19.6377 26.515 19.4949C26.4436 19.4856 26.3722 19.4766 26.3007 19.468L26.4919 18.0771C26.5476 17.6724 26.5326 17.261 26.4477 16.8614L26.42 16.7309C26.0894 15.1751 24.7155 14.0625 23.125 14.0625ZM24.43 19.3081L24.6344 17.8217C24.6605 17.6318 24.6535 17.4387 24.6137 17.2511L24.5859 17.1206C24.4393 16.4308 23.8302 15.9375 23.125 15.9375C22.4197 15.9375 21.8106 16.4308 21.664 17.1206L21.6363 17.2511C21.5964 17.4387 21.5894 17.6318 21.6155 17.8217L21.8199 19.3081C22.6894 19.2649 23.5605 19.2649 24.43 19.3081Z"
+                              fill="black" />
+                          <path
+                              d="M25.8646 12.4762C25.8966 12.6861 25.6637 12.8378 25.4738 12.7426C24.7628 12.386 23.9632 12.1875 23.125 12.1875C20.6491 12.1875 18.5106 13.9193 17.9959 16.3411L17.9682 16.4717C17.8693 16.9372 17.8324 17.413 17.8579 17.887C17.8684 18.0807 17.7771 18.2664 17.6202 18.3805C16.5937 19.1271 15.9375 20.3365 15.9375 21.6832V23.4567C15.9375 23.6622 15.772 23.8296 15.5664 23.8309C13.2297 23.8455 10.8926 23.7694 8.56031 23.6026L6.6678 23.4672C5.45716 23.3806 4.45861 22.4856 4.24045 21.2916C3.70589 18.3659 3.61437 15.3764 3.96897 12.4235L4.30958 9.58707C4.474 8.2179 5.63553 7.1875 7.01453 7.1875H9.87899C11.1194 7.1875 12.1249 8.19305 12.1249 9.43346C12.1249 9.47443 12.1582 9.50765 12.1991 9.50765H23.0902C24.416 9.50765 25.5453 10.471 25.7543 11.7802L25.8343 12.282C25.8447 12.3467 25.8548 12.4114 25.8646 12.4762Z"
+                              fill="black" />
+                      </svg>
+                  </div>
+              </div>
+          </div>
+          <div class="section6__wrapper--right">
+              <div></div>
+              <img src="../assets/images/section6-img.png" alt="Img">
+          </div>
+      </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" id="footer">
+    <div class="footer__wrapper">
+      <!-- Left Section -->
+      <div class="footer__wrapper--left">
+        <div class="footer__wrapper--left--card1">
+          <a href="#" class="nav__logo">
+            <img src="../assets/images/Logo.svg" alt="Car Rental Logo">
+          </a>
+          <article>
+            Car rental offers a wide range of cars available for rent in Newark EWR Airport NJ. 
+            We pride ourselves on our customer service and hassle-free renting experience.
+          </article>
+        </div>
+        <div class="footer__wrapper--left--card2">
+          <h3>© 2024 Car Rental | Developed by SunilGopi <br> <a href="#">Terms & Conditions</a></h3>
+        </div>
+      </div>
+      
+      <!-- Right Section -->
+      <div class="footer__wrapper--right">
+        <div class="footer__wrapper--right--top">
+          <ul class="footer__list">
+            <!-- Main Section -->
+            <li class="footer__item">
+              <h3>Main</h3>
+              <a href="#" class="footer__link">My Bookings</a><br>
+              <a href="#" class="footer__link">Reservation</a>
+            </li>
+            <!-- Categories Section -->
+            
+            <!-- Company Section -->
+            <li class="footer__item">
+              <h3>Company</h3>
+              <a href="#" class="footer__link">About Us</a><br>
+              <a href="#" class="footer__link">Careers</a><br>
+              <a href="#" class="footer__link">News</a><br>
+              <a href="#" class="footer__link">Contact Us</a>
+            </li>
+            <!-- Location Section -->
+            <li class="footer__item">
+              <h3>Our Location</h3>
+              <a href="#" class="footer__link">522004 Guntur</a><br>
+              <a href="#" class="footer__link">522002 Hyderabad</a><br>
+              <a href="#" class="footer__link">522045 vizag</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer__wrapper--right--bottom">
+          <ul class="footer__list">
+            <!-- Contact -->
+            <li class="footer__item">
+              <h3>Contact</h3>
+              <a href="tel:+18554200000" class="footer__link">+1 855 420 0000</a><br>
+              <a href="mailto:carrental@gmail.com" class="footer__link">carrental@gmail.com</a>
+            </li>
+            <!-- Hours of Operation -->
+            <li class="footer__item">
+              <h3>Hours of Operation</h3>
+              <p>8:00 - 21:00 Mon-Sat</p>
+              <p>9:00 - 15:00 Sundays</p>
+            </li>
+            <!-- Social Networks -->
+            <li class="footer__item">
+              <h3>Social Networks</h3>
+              <div class="social-iscon">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png" alt="Facebook" width="30"></a>
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Tsl1IJ8pCYr8uQGIumeG2SkCV34xtESOZg&s" alt="Twitter" width="30"></a>
+                <a href="#"><img src="https://i.pinimg.com/736x/2a/89/fe/2a89fee1a635745cec680e88efa49bcc.jpg" alt="Instagram" width="30"></a>
+                <a href="#"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn" width="30"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+   <script src="./admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

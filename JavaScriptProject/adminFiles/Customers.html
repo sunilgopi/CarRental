@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Users Page</title>
+  <style>
+    /* General Page Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin: 20px 0;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    /* Container for User Cards */
+    #userCards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px;
+    }
+
+    /* Individual Card Style */
+    .card {
+      background-color: #fff;
+      border: 2px solid #189a4c;
+      border-radius: 12px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* User Logo Styling */
+    .user-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+      background-color: #e0e0e0;
+      display: inline-block;
+    }
+
+    /* Card Content Styling */
+    .card h3 {
+      color: #127f2f;
+      margin: 10px 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .card p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .car-image {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* Footer Style */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 10px;
+      background-color: #127f2f;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>User Cards</h1>
+  <div id="userCards"></div>
+
+  <script>
+    // Example users stored in localStorage
+    const users = JSON.parse(localStorage.getItem("AdminCarBooking"))
+
+    const userCardsContainer = document.getElementById("userCards");
+
+    // Dynamically create user cards
+    users.forEach(user => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      // User Logo (Placeholder Image)
+      const userLogo = document.createElement("img");
+      userLogo.src = "../assets/images/icons8-user-100.png"; // Replace with user logo path
+      userLogo.alt = "User Logo";
+      userLogo.className = "user-logo";
+
+
+
+      // Username
+      const username = document.createElement("h3");
+      username.textContent = user.Name;
+
+      // Car Image
+      const carImage = document.createElement("img");
+      carImage.src = user.image || "https://via.placeholder.com/250x150";
+      carImage.alt = "Car Image";
+      carImage.className = "car-image";
+
+      // Car Details
+      const carName = document.createElement("p");
+      carName.innerHTML = `<strong>Car:</strong> ${user.carName}`;
+
+      const startDate = document.createElement("p");
+      startDate.innerHTML = `<strong>Start Date:</strong> ${user.startDate}`;
+
+      const endDate = document.createElement("p");
+      endDate.innerHTML = `<strong>End Date:</strong> ${user.endDate}`;
+
+      const totalPrice = document.createElement("p");
+      totalPrice.innerHTML = `<strong>Total Price:</strong> $${user.totalPrice}`;
+
+      // Add event listener for navigation
+    
+
+      // Append elements to card
+      //card.appendChild(userLogo);
+      card.appendChild(carImage);
+      card.appendChild(username);
+      card.appendChild(carName);
+      card.appendChild(startDate);
+      card.appendChild(endDate);
+      card.appendChild(totalPrice);
+
+      userCardsContainer.appendChild(card);
+    });
+  </script>
+
+  <footer>
+    &copy; 2024 Car Booking System. All Rights Reserved.
+  </footer>
+</body>
+
+</html>

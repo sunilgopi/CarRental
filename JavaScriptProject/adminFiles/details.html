@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Booking Details</title>
+  <style>
+    /* General Page Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-top: 20px;
+    }
+
+    /* Container for Car Details */
+    #carDetails {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+    }
+
+    /* Car Detail Card */
+    .car-card {
+      background-color: #ffffff;
+      border: 2px solid #28a745;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .car-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .car-card h3 {
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+
+    .car-card p {
+      font-size: 16px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>User Booking Details</h1>
+  <div id="carDetails"></div>
+
+  <script>
+   
+    const userName  = JSON.parse(localStorage.getItem("")) 
+  
+    
+    const bookings = JSON.parse(localStorage.getItem("Confirmed_Bookings")) || [];
+  
+    
+    const userBooking = bookings.find(booking => booking.Name === userName);
+  
+    const carDetailsContainer = document.getElementById("carDetails");
+  
+    if (userBooking) {
+      
+      const carCard = document.createElement("div");
+      carCard.className = "car-card";
+      carCard.innerHTML = `
+        <h3>Car Details</h3>
+        <p><strong>Car:</strong> ${userBooking.car}</p>
+      `;
+      carDetailsContainer.appendChild(carCard);
+    } else {
+      carDetailsContainer.innerHTML = `<p style="color: red;">No booking details found for this user.</p>`;
+    }
+  </script>  
+</body>
+</html>
